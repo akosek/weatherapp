@@ -1,9 +1,5 @@
 body {
   font-family: "Baloo Thambi 2", cursive;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
   margin: 0;
 }
 
@@ -15,6 +11,16 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://picsum.photos/1600/1050");
+  background-size: cover;
+  background-position: center;
+}
+
+.weather-info {
+  height: auto;
+  width: 40%;
   max-width: 1000px;
   max-height: 700px;
   padding: 5%;
