@@ -40,9 +40,7 @@ const onEnterSubmit = (event) => {
     fadeInOut();
     let query = viewElems.searchInput.value;
     getWeatherByCity(query).then((data) => {
-      console.log(data);
-      switchView();
-      fadeInOut();
+      displayWeatherData(data);
     });
   }
 };
@@ -50,9 +48,7 @@ const onClickSubmit = () => {
   fadeInOut();
   let query = viewElems.searchInput.value;
   getWeatherByCity(query).then((data) => {
-    console.log(data);
-    switchView();
-    fadeInOut();
+    displayWeatherData(data);
   });
 };
 
@@ -82,7 +78,31 @@ const onBackClick = () => {
   setTimeout(() => {
     switchView();
     fadeInOut();
+    viewElems.searchInput.append(" ");
   }, 500);
+};
+
+const changeToCelcius = (kelvin) => {
+  var kTemp = kelvin;
+  var cTemp = kTemp - 273.15;
+  return cTemp.toFixed(2);
+};
+
+const displayWeatherData = (data) => {
+  switchView();
+  fadeInOut();
+
+  const weatherData = data;
+  console.log("moje Daty", weatherData);
+  viewElems.weatherCity.innerText = data.name;
+  viewElems.weatherCurrentTemp.innerText =
+    changeToCelcius(data.main.temp) + " °C";
+  viewElems.weatherMaxTemp.innerText =
+    changeToCelcius(data.main.temp_max) + " °C";
+  viewElems.weatherMinTemp.innerText =
+    changeToCelcius(data.main.temp_min) + " °C";
+
+  viewElems.weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 };
 
 document.addEventListener("DOMContentLoaded", initializeApp);

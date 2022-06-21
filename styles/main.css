@@ -70,7 +70,27 @@ main {
   align-items: center;
 }
 
+.weather-info__city img {
+  background-color: #c9d6e8;
+  border-radius: 4px;
+}
+
 .weather-info__btn-return {
   padding: 5px 25px;
   border: 2px solid black;
+}
+
+.weather-info__temperatures h2 {
+  text-align: center;
+}
+
+.weather-info__details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.weather-info__label {
+  text-align: center;
 }
