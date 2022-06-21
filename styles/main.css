@@ -73,6 +73,8 @@ main {
 .weather-info__city img {
   background-color: #c9d6e8;
   border-radius: 4px;
+  height: auto;
+  width: 150px;
 }
 
 .weather-info__btn-return {
@@ -82,6 +84,7 @@ main {
 
 .weather-info__temperatures h2 {
   text-align: center;
+  font-size: 30px;
 }
 
 .weather-info__details {
@@ -92,5 +95,9 @@ main {
 }
 
 .weather-info__label {
+  font-weight: bold;
+}
+
+.weather-info__number {
   text-align: center;
 }

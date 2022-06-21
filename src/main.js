@@ -93,14 +93,15 @@ const displayWeatherData = (data) => {
   fadeInOut();
 
   const weatherData = data;
+  const currentTemp = changeToCelcius(data.main.temp);
+  const minTemp = changeToCelcius(data.main.temp_min);
+  const maxTemp = changeToCelcius(data.main.temp_max);
+
   console.log("moje Daty", weatherData);
   viewElems.weatherCity.innerText = data.name;
-  viewElems.weatherCurrentTemp.innerText =
-    changeToCelcius(data.main.temp) + " °C";
-  viewElems.weatherMaxTemp.innerText =
-    changeToCelcius(data.main.temp_max) + " °C";
-  viewElems.weatherMinTemp.innerText =
-    changeToCelcius(data.main.temp_min) + " °C";
+  viewElems.weatherCurrentTemp.innerText = currentTemp + " °C";
+  viewElems.weatherMaxTemp.innerText = maxTemp + " °C";
+  viewElems.weatherMinTemp.innerText = minTemp + " °C";
 
   viewElems.weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 };
