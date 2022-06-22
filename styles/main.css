@@ -11,6 +11,16 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://picsum.photos/1600/1050");
+  background-size: cover;
+  background-position: center;
+}
+
+.weather-info {
+  height: auto;
+  width: 40%;
   max-width: 1000px;
   max-height: 700px;
   padding: 5%;
@@ -28,6 +38,9 @@ main {
 .weather-info__search-view {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px;
 }
 
 .weather-info__search-view label {
@@ -57,7 +70,34 @@ main {
   align-items: center;
 }
 
+.weather-info__city img {
+  background-color: #c9d6e8;
+  border-radius: 4px;
+  height: auto;
+  width: 150px;
+}
+
 .weather-info__btn-return {
   padding: 5px 25px;
   border: 2px solid black;
+}
+
+.weather-info__temperatures h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.weather-info__details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.weather-info__label {
+  font-weight: bold;
+}
+
+.weather-info__number {
+  text-align: center;
 }
