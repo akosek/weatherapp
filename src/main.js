@@ -34,9 +34,11 @@ class WeatherApp {
         .then((data) => {
           this.displayWeatherData(data);
         })
-        .catch(() => {
-          this.fadeInOut();
+        .catch((error) => {
+          console.error("There was an error!", error);
           this.viewElems.searchInput.style.borderColor = "red";
+          this.viewElems.weatherForecastView.style.display = "none";
+          this.viewElems.weatherSearchView.style.display = "flex";
         });
     }
   };
